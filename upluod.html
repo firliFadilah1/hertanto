@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Kenangan - Hertanto Family</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Styling khusus untuk input file agar lebih rapi */
+    #fileInput {
+      padding: 10px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      margin-top: 5px;
+    }
+    #btn-upload:disabled {
+      background: #ccc !important;
+      cursor: not-allowed;
+    }
+    #uploadForm label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    #uploadForm input[type="text"], #uploadForm textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body data-page="upload">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon">🏠</div>
+        <div class="logo-text">Hertanto</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="kenangan.html">KENANGAN</a>
+        <a href="upload.html" class="accent active">UPLOAD</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Unggah Kenangan Baru</h2>
+    <p>Bagikan foto atau video terbaik Anda. File akan disimpan secara privat di arsip keluarga.</p>
+
+    <div id="uploader" class="info-box" style="margin-top:16px; padding:20px; border: 2px dashed var(--accent); text-align:center;">
+        
+        <p><strong>Status Login:</strong> <span id="status" style="font-weight:600; color:var(--muted);">Memeriksa...</span></p>
+        
+        <div id="user" class="user-info" style="margin-top:15px; display:none;">
+            <img id="avatar" class="avatar" src="" alt="avatar" />
+            <div id="userName" style="font-weight:600;"></div>
+            <div class="muted">Anda siap mengunggah file kenangan.</div>
+        </div>
+        
+        <button id="btn-google" class="btn-google" style="margin-top:15px; display:none;">Login untuk Upload</button>
+        <button id="btn-logout" class="btn-logout" style="margin-top:8px; display:none;">Logout</button>
+        
+        <form id="uploadForm" style="margin-top:20px; text-align:left;">
+            <label>Judul Kenangan<input type="text" id="fileTitle" placeholder="Misalnya: Liburan Pantai Bali 2023" required/></label>
+            
+            <label>Deskripsi Singkat (Opsional)<textarea id="fileDescription" rows="2" placeholder="Detail tentang momen ini, siapa saja yang ada, dll."></textarea></label>
+
+            <label>Pilih File (Foto/Video)<input type="file" id="fileInput" accept="image/*,video/*" required/></label>
+            
+            <button type="submit" id="btn-upload" class="btn-primary" disabled>Unggah File</button>
+        </form>
+        
+        <div id="uploadProgress" style="margin-top:15px; color:var(--primary); font-weight:600; display:none;">
+          Mengunggah: 0%
+        </div>
+        
+    </div>
+    
+    <div class="info-box" style="margin-top:20px">
+        <strong>Catatan Pengembangan:</strong>
+        <p style="color:var(--muted)">Halaman ini memerlukan **`auth.js`** yang telah dimodifikasi (lihat di bawah) untuk menangani proses login dan upload file.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© Hertanto Family. Dibuat oleh jacky the code bender · Gravicode Studios</p></div></footer>
+  
+  <script type="module" src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

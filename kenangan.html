@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kenangan - Hertanto</title>
+</head>
+<body>
+  <h1>Kenangan</h1>
+  <div id="list"></div>
+
+  <script>
+    // Menampilkan file yang disimpan di localStorage oleh upload.html
+    const list = document.getElementById('list');
+    const saved = JSON.parse(localStorage.getItem('hertanto_files') || '[]');
+
+    if (saved.length === 0) {
+      list.innerHTML = '<p>Belum ada kenangan. Upload dulu lewat upload.html</p>';
+    } else {
+      let html = '<ul>';
+      for (const f of saved) {
+        const view = `https://drive.google.com/uc?export=view&id=${f.id}`;
+        html += `<li>`;
+        if (f.mimeType.startsWith('image/')) {
+          html += `<div><strong>${f.name}</strong><br/><img src="${view}" style="max-width:300px;max-height:300px;"/></div>`;
+        } else if (f.mimeType.startsWith('video/')) {
+          html += `<div><strong>${f.name}</strong><br/><video src="${view}" controls style="max-width:480px;max-height:320px;"></video></div>`;
+        } else {
+          html += `<div><a href="https://drive.google.com/file/d/${f.id}/view" target="_blank">${f.name}</a></div>`;
+        }
+        html += `</li>`;
+      }
+      html += '</ul>';
+      list.innerHTML = html;
+    }
+  </script>
+
+  <hr/>
+  <a href="upload.html">Kembali ke Upload</a>
+</body>
+</html>

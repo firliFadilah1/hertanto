@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Hertanto Family</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="contact">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon">🏠</div>
+        <div class="logo-text">Hertanto</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="kenangan.html">KENANGAN</a>
+        <a href="upload.html" class="accent">UPLOAD</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Kontak</h2>
+    <p>Jika Anda memiliki pertanyaan, permintaan fitur, atau ingin memberikan masukan, silakan gunakan formulir di bawah ini.</p>
+
+    <!-- Konten profesional -->
+    <div class="info-box" style="margin-top:10px">
+      <strong>Pilihan Kontak</strong>
+      <p style="color:var(--muted)">Formulir ini bersifat simulasi. Untuk permintaan nyata terkait pengembangan, jelaskan kebutuhan Anda secara rinci agar dapat ditindaklanjuti.</p>
+    </div>
+
+    <form id="contactForm" style="margin-top:12px">
+      <label>Nama<input type="text" id="cName" required/></label>
+      <label>Email<input type="email" id="cEmail" required/></label>
+      <label>Pesan<textarea id="cMessage" required></textarea></label>
+      <button type="submit" class="btn-primary">Kirim</button>
+    </form>
+    <div id="cResult" style="color:green;margin-top:10px"></div>
+
+    <section style="margin-top:16px">
+      <h3>Alamat (Contoh)</h3>
+      <p style="color:var(--muted)">Jl. Kenangan No.7 — Informasi alamat ini hanya contoh untuk kebutuhan tampilan.</p>
+    </section>
+
+    <section style="margin-top:12px">
+      <h3>Jam Operasional (Contoh)</h3>
+      <p style="color:var(--muted)">Senin - Jumat: 09.00 - 17.00</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© Hertanto Family. Dibuat oleh jacky the code bender · Gravicode Studios</p></div></footer>
+  <script src="app.js"></script>
+  <script>
+    const cForm = document.getElementById('contactForm');
+    const cResult = document.getElementById('cResult');
+    cForm.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      cResult.textContent = 'Terima kasih, pesan Anda sudah dikirim (simulasi).';
+      cForm.reset();
+      setTimeout(()=>cResult.textContent='',3000);
+    })
+  </script>
+</body>
+</html>

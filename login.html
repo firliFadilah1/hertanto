@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Hertanto.web</title>
+  <style>
+    body { font-family: Arial, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; background:#f5f7fb; }
+    .card { background:#fff; padding:24px; border-radius:8px; box-shadow:0 6px 20px rgba(30,40,60,0.08); width:320px; }
+    .logo { text-align:center; margin-bottom:12px; }
+    button { width:100%; padding:10px; border:0; border-radius:6px; cursor:pointer; font-size:16px; }
+    .btn-google { background:#4285F4; color:#fff; }
+    .btn-logout { background:#eee; color:#333; margin-top:8px; }
+    .user-info { margin-top:12px; text-align:center; }
+    img.avatar { width:72px; height:72px; border-radius:50%; object-fit:cover; }
+    .muted { color:#666; font-size:14px; }
+    a.link { color:#4285F4; text-decoration:none; }
+  </style>
+</head>
+<!-- Tambahkan atribut data-page agar auth.js bisa mendeteksi halaman saat ini -->
+<body data-page="login">
+  <div class="card">
+    <div class="logo">
+      <h2>Hertanto.web</h2>
+      <div class="muted">Contoh login Google menggunakan Firebase Auth (modular)</div>
+    </div>
+
+    <button id="btn-google" class="btn-google">Masuk dengan Google</button>
+    <button id="btn-logout" class="btn-logout" style="display:none">Keluar</button>
+
+    <div id="user" class="user-info" style="display:none">
+      <img id="avatar" class="avatar" src="" alt="avatar" />
+      <!-- Tambahkan elemen dengan id userName karena auth.js mengaksesnya -->
+      <div id="userName" style="font-weight:600; margin-top:8px"></div>
+      <div id="email" class="muted"></div>
+    </div>
+
+    <div id="status" class="muted" style="margin-top:10px; text-align:center">Belum login</div>
+
+    <div style="margin-top:12px; text-align:center;">
+      <!-- Perbaiki link upload: di project ada file "upluod.html" -->
+      <a href="upluod.html" id="link-upload" class="link" style="font-size:14px;">Halaman Upload & Drive</a>
+    </div>
+  </div>
+
+  <!-- Load auth.js (modular). File auth.js sudah berisi konfigurasi Firebase. -->
+  <script type="module" src="auth.js"></script>
+</body>
+</html>
