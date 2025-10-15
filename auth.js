@@ -13,10 +13,14 @@ import {
 // === KONFIGURASI FIREBASE ANDA ===
 // Ganti nilai di bawah ini dengan konfigurasi dari Firebase Console Anda
 const firebaseConfig = {
-  apiKey: "REPLACE_API_KEY_ANDA",
-  authDomain: "REPLACE_AUTH_DOMAIN_ANDA",
-  projectId: "REPLACE_PROJECT_ID_ANDA",
-  appId: "REPLACE_APP_ID_ANDA"
+ apiKey: "AIzaSyA82vPp5DxLZNQWe5iHGVgGG3ZTmd4JaJs",
+  authDomain: "firli-3413a.firebaseapp.com",
+  databaseURL: "https://firli-3413a-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "firli-3413a",
+  storageBucket: "firli-3413a.firebasestorage.app",
+  messagingSenderId: "519343845711",
+  appId: "1:519343845711:web:62f9520b8e8ac49871153a",
+  measurementId: "G-K6672VY7LF"
 };
 // ==================================
 
@@ -195,3 +199,4 @@ onAuthStateChanged(auth, (user) => {
     }
   }
 });
+
